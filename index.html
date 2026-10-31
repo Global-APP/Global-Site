@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Global é um bot open-source do Fluxer que conecta comunidades em um chat global interconectado.">
+  <meta name="theme-color" content="#0B0B0B">
+  <title>Global — Converse globalmente</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <aside class="sidebar">
+    <a class="sidebar__logo" href="#inicio" aria-label="Global — início">
+      <img class="wordmark" src="assets/wordmark.svg" alt="" width="1920" height="1157">
+    </a>
+
+    <nav class="sidebar__nav" aria-label="Seções">
+      <a class="sidebar__link" href="#inicio" data-section="inicio">01<span>Início</span></a>
+      <a class="sidebar__link" href="#recursos" data-section="recursos">02<span>Recursos</span></a>
+      <a class="sidebar__link" href="#demo" data-section="demo">03<span>Demonstração</span></a>
+      <a class="sidebar__link" href="#codigo-aberto" data-section="codigo-aberto">04<span>Código aberto</span></a>
+      <a class="sidebar__link" href="#como" data-section="como">05<span>Como usar</span></a>
+    </nav>
+
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+      <svg class="icon icon--moon" aria-hidden="true"><use href="#moon"/></svg>
+      <svg class="icon icon--sun" aria-hidden="true"><use href="#sun"/></svg>
+    </button>
+  </aside>
+
+  <header class="topbar">
+    <a class="topbar__logo" href="#inicio" aria-label="Global — início">
+      <img class="wordmark" src="assets/wordmark.svg" alt="" width="1920" height="1157">
+    </a>
+
+    <div class="topbar__actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+        <svg class="icon icon--moon" aria-hidden="true"><use href="#moon"/></svg>
+        <svg class="icon icon--sun" aria-hidden="true"><use href="#sun"/></svg>
+      </button>
+      <button class="theme-toggle" type="button" data-menu-open aria-label="Abrir menu">
+        <svg class="icon" aria-hidden="true"><use href="#burger"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <dialog class="menu" id="menu" aria-label="Menu">
+    <button class="theme-toggle menu__close" type="button" data-menu-close aria-label="Fechar menu">
+      <svg class="icon" aria-hidden="true"><use href="#close"/></svg>
+    </button>
+
+    <nav class="menu__nav">
+      <a class="menu__link" href="#inicio">Início</a>
+      <a class="menu__link" href="#recursos">Recursos</a>
+      <a class="menu__link" href="#demo">Demonstração</a>
+      <a class="menu__link" href="#codigo-aberto">Código aberto</a>
+      <a class="menu__link" href="#como">Como usar</a>
+    </nav>
+
+    <div class="menu__links">
+      <a class="btn btn--fill" data-link="invite">Adicionar o bot</a>
+      <a class="btn btn--line" data-link="github"><svg class="icon" aria-hidden="true"><use href="#github"/></svg>GitHub</a>
+    </div>
+  </dialog>
+
+  <main class="page">
+    <section class="hero" id="inicio">
+      <div class="hero__text">
+        <span class="hero__kicker">Bot open-source para o Fluxer</span>
+
+        <h1 class="hero__title">
+          <span class="hero__line"><span>Converse</span></span>
+          <span class="hero__line"><span>globalmente.</span></span>
+        </h1>
+
+        <p class="hero__lead">Global é o bot que liga o seu servidor a outras comunidades em um único chat interconectado.</p>
+
+        <div class="hero__actions">
+          <a class="btn btn--fill" data-link="invite">Adicionar ao servidor <svg class="icon icon--arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="btn btn--line" data-link="support">Servidor de suporte <svg class="icon icon--arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+        </div>
+
+        <div class="hero__oss">
+          <a class="pill" data-link="github">
+            <svg class="icon" aria-hidden="true"><use href="#github"/></svg>
+            <b>Open-source</b> · Global-APP/global
+          </a>
+        </div>
+      </div>
+
+      <div class="globe" aria-hidden="true">
+        <div class="globe__tilt" id="globe-tilt">
+          <div class="globe__core"></div>
+          <div class="globe__spin" id="globe-spin"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="recursos">
+      <div class="section-head reveal">
+        <span class="section-head__num">02</span>
+        <h2>O que ele faz</h2>
+      </div>
+
+      <div class="features__grid">
+        <div class="features__list">
+          <article class="feature" data-feature="0">
+            <span class="feature__num">01</span>
+            <h3 class="feature__title">Responder</h3>
+            <p class="feature__text">Responda a qualquer mensagem do chat e a resposta chega em todas as comunidades conectadas.</p>
+          </article>
+          <article class="feature" data-feature="1">
+            <span class="feature__num">02</span>
+            <h3 class="feature__title">Apagar</h3>
+            <p class="feature__text">Apagou uma mensagem? Ela some de todos os servidores ao mesmo tempo.</p>
+          </article>
+          <article class="feature" data-feature="2">
+            <span class="feature__num">03</span>
+            <h3 class="feature__title">Figurinhas</h3>
+            <p class="feature__text">Mande figurinhas e dê mais cara de comunidade ao bate-papo.</p>
+          </article>
+          <article class="feature" data-feature="3">
+            <span class="feature__num">04</span>
+            <h3 class="feature__title">Conectar</h3>
+            <p class="feature__text">Ligue o seu servidor a outras comunidades e converse com todo mundo em um só lugar.</p>
+          </article>
+        </div>
+
+        <div class="features__preview">
+          <div class="window preview">
+            <div class="window__bar"><i>#</i><b>chat-global</b></div>
+            <div class="preview__stack" id="preview-stack"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo" id="demo">
+      <div class="section-head reveal">
+        <span class="section-head__num">03</span>
+        <h2>Assim fica o chat</h2>
+      </div>
+
+      <p class="demo__intro reveal">Quem conversa no seu servidor aparece normalmente. As mensagens das outras comunidades chegam em embeds. Role a página ou mova o mouse para girar a cena.</p>
+
+      <div class="demo__stage" id="demo-stage">
+        <div class="demo__scene" id="demo-scene">
+          <div class="window chat">
+            <div class="window__bar"><i>#</i><b>chat-global</b></div>
+            <div class="chat__feed" id="chat-feed" aria-live="polite"></div>
+          </div>
+
+          <article class="window server-card">
+            <div class="server-card__banner"></div>
+            <div class="server-card__body">
+              <span class="avatar server-card__icon"><img src="assets/icon.svg" alt=""></span>
+              <h3 class="server-card__name">Global: Converse globalmente</h3>
+              <p class="server-card__stats">
+                <span><i></i><b data-count="9">9</b> online</span>
+                <span><i></i><b data-count="31">31</b> membros</span>
+              </p>
+              <a class="server-card__join" data-link="support">Ir para a comunidade</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="opensource" id="codigo-aberto">
+      <div class="section-head reveal">
+        <span class="section-head__num">04</span>
+        <h2>Código aberto</h2>
+      </div>
+
+      <div class="opensource__grid">
+        <div class="reveal">
+          <p class="opensource__lead">O Global é open-source. Veja como ele funciona por dentro, sugira melhorias ou ajude a construir a próxima versão.</p>
+
+          <ul class="opensource__list">
+            <li>Todo o código está aberto no GitHub</li>
+            <li>Abra issues para reportar problemas e dar ideias</li>
+            <li>Envie pull requests e contribua com o projeto</li>
+          </ul>
+
+          <a class="btn btn--fill" data-link="github">
+            <svg class="icon" aria-hidden="true"><use href="#github"/></svg>
+            Ver no GitHub
+            <svg class="icon icon--arrow" aria-hidden="true"><use href="#arrow"/></svg>
+          </a>
+        </div>
+
+        <div class="terminal reveal">
+          <div class="terminal__bar">
+            <svg class="icon" aria-hidden="true"><use href="#github"/></svg>
+            Global-APP / global
+            <small>open-source</small>
+          </div>
+
+          <div class="terminal__body">
+            <div class="terminal__line">
+              <code id="clone-command">git clone https://github.com/Global-APP/global.git</code>
+              <button class="terminal__copy" type="button" data-copy="#clone-command">Copiar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" id="como">
+      <div class="section-head reveal">
+        <span class="section-head__num">05</span>
+        <h2>Três passos e pronto.</h2>
+      </div>
+
+      <ol class="how__steps">
+        <li class="step reveal">
+          <b class="step__num">1</b>
+          <h3 class="step__title">Adicione o bot</h3>
+          <p class="step__text">Convide o Global para o seu servidor pelo link de autorização.</p>
+        </li>
+        <li class="step reveal">
+          <b class="step__num">2</b>
+          <h3 class="step__title">Escolha um canal</h3>
+          <p class="step__text">Escolha um canal onde o chat global vai aparecer com <code>g.config</code>.</p>
+        </li>
+        <li class="step reveal">
+          <b class="step__num">3</b>
+          <h3 class="step__title">Converse</h3>
+          <p class="step__text">Escreva, responda, apague e mande figurinhas para todas as comunidades.</p>
+        </li>
+      </ol>
+
+      <div class="how__actions">
+        <a class="btn btn--white" data-link="invite">Adicionar o Global <svg class="icon icon--arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a class="btn btn--outline" data-link="support">Entrar no suporte <svg class="icon icon--arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a class="btn btn--outline" data-link="github"><svg class="icon" aria-hidden="true"><use href="#github"/></svg>GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <a href="#inicio" aria-label="Global — voltar ao topo">
+          <img class="wordmark" src="assets/wordmark.svg" alt="" width="1920" height="1157">
+        </a>
+        <p>Um chat global que conecta comunidades do Fluxer.</p>
+        <a class="pill" data-link="github">
+          <svg class="icon" aria-hidden="true"><use href="#github"/></svg>
+          <b>Open-source</b> no GitHub
+        </a>
+      </div>
+
+      <nav aria-label="Navegação">
+        <h3 class="footer__title">Navegação</h3>
+        <ul class="footer__list">
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#demo">Demonstração</a></li>
+          <li><a href="#codigo-aberto">Código aberto</a></li>
+          <li><a href="#como">Como usar</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Links rápidos">
+        <h3 class="footer__title">Links rápidos</h3>
+        <ul class="footer__list">
+          <li><a data-link="invite">Adicionar o bot</a></li>
+          <li><a data-link="support">Servidor de suporte</a></li>
+          <li><a data-link="github">Repositório no GitHub</a></li>
+          <li><a data-link="issues">Reportar um problema</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 Global</span>
+      <span>Projeto open-source feito para o Fluxer</span>
+    </div>
+  </footer>
+
+  <svg aria-hidden="true" style="position: absolute; width: 0; height: 0">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 11h12.2l-4.6-4.6L13 5l7 7-7 7-1.4-1.4 4.6-4.6H4z"/></symbol>
+    <symbol id="github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol>
+    <symbol id="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></symbol>
+    <symbol id="sun" viewBox="0 0 24 24"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zM11 1h2v3h-2zm0 19h2v3h-2zM1 11h3v2H1zm19 0h3v2h-3zM4.2 5.6l1.4-1.4 2.1 2.1-1.4 1.4zm12.1 12.1l1.4-1.4 2.1 2.1-1.4 1.4zM5.6 19.8l-1.4-1.4 2.1-2.1 1.4 1.4zM17.7 7.7l-1.4-1.4 2.1-2.1 1.4 1.4z"/></symbol>
+    <symbol id="burger" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="M5.6 4.2L12 10.6l6.4-6.4 1.4 1.4-6.4 6.4 6.4 6.4-1.4 1.4-6.4-6.4-6.4 6.4-1.4-1.4 6.4-6.4-6.4-6.4z"/></symbol>
+  </svg>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
