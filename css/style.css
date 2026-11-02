@@ -1678,8 +1678,9 @@ h2,
 .partner__join {
   display: block;
   padding: 13px;
+  border: 1px solid rgb(255 255 255 / 0.18);
   border-radius: 10px;
-  background: var(--accent);
+  background: var(--button, var(--accent));
   color: #fff;
   font-size: 15px;
   font-weight: 700;
