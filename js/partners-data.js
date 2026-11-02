@@ -1,4 +1,11 @@
 const PARTNERS = [
+       {
+    name: "Família BR",
+    description: "O Família BR é o maior servidor brasileiro do Fluxer, projetado para funcionar como um porto seguro online onde você pode conversar, fazer amizades e interagir diariamente.",
+    invite: "https://fluxer.gg/V73Gi4ia",
+    icon: "assets/partners/familiabr.gif",
+    accent: "#36a124"
+  },
   {
     name: "Gateway",
     description: "Gateway é uma comunidade que busca ser um ambiente acolhedor para desenvolvedores e pessoas que tem interesse em assuntos envolvendo tecnologia no geral.",
