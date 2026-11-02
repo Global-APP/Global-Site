@@ -20,6 +20,13 @@ const PARTNERS = [
     icon: "assets/partners/queremosacordartarde.webm.mp4",
     accent: "#721e58"
   },
+         {
+    name: "Aliança Racionalista Nacional - ARN",
+    description: "Conheça o primeiro servidor brasileiro de debates no Fluxer e QG do nosso movimento!",
+    invite: "https://fluxer.gg/M1fsAYTA",
+    icon: "assets/partners/arn.png",
+    accent: "#ffffff"
+  },
   {
     name: "Ace",
     description: "Seu bot multifuncional, um companheiro amigável para a sua comunidade.",
