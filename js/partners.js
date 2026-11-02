@@ -47,11 +47,12 @@ function createIcon({ name, icon, letter = name[0].toUpperCase(), accent = DEFAU
 }
 
 function createCard(partner, index) {
-  const { name, description, invite, accent = DEFAULT_ACCENT, label = "Entrar no servidor" } = partner;
+  const { name, description, invite, accent = DEFAULT_ACCENT, button, label = "Entrar no servidor" } = partner;
   const card = document.createElement("article");
 
   card.className = "partner";
   card.style.setProperty("--accent", accent);
+  if (button) card.style.setProperty("--button", button);
   card.style.setProperty("--delay", `${index * 0.12}s`);
   card.innerHTML = `
     <div class="partner__banner"></div>
