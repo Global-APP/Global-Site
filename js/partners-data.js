@@ -6,6 +6,13 @@ const PARTNERS = [
     icon: "assets/partners/gateway.png",
     accent: "#f8d510"
   },
+   {
+    name: "Queremos acordar tarde!",
+    description: "Uma comunidade para todos que odeiam acordar cedo (ou a escola, lol) tenha a liberdade de se expressar!",
+    invite: "https://fluxer.gg/5Qclag12",
+    icon: "assets/partners/queremosacordartarde.webm.mp4",
+    accent: "#721e58"
+  },
   {
     name: "Ace",
     description: "Seu bot multifuncional, um companheiro amigável para a sua comunidade.",
