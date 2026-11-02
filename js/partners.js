@@ -11,6 +11,23 @@ const JOIN_CARD = {
 const escapeHtml = (text) =>
   text.replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
 
+const VIDEO_PATTERN = /\.(mp4|webm)$/i;
+
+function createMedia(source) {
+  if (!VIDEO_PATTERN.test(source)) {
+    const image = new Image();
+
+    image.alt = "";
+    image.src = source;
+    return image;
+  }
+
+  const video = document.createElement("video");
+
+  Object.assign(video, { src: source, autoplay: true, loop: true, muted: true, playsInline: true });
+  return video;
+}
+
 function createIcon({ name, icon, letter = name[0].toUpperCase(), accent = DEFAULT_ACCENT }) {
   const placeholder = document.createElement("i");
   placeholder.className = "initial partner__icon";
@@ -20,13 +37,11 @@ function createIcon({ name, icon, letter = name[0].toUpperCase(), accent = DEFAU
   if (!icon) return placeholder;
 
   const wrapper = document.createElement("span");
-  const image = new Image();
+  const media = createMedia(icon);
 
   wrapper.className = "avatar partner__icon";
-  image.alt = "";
-  image.src = icon;
-  image.addEventListener("error", () => wrapper.replaceWith(placeholder));
-  wrapper.append(image);
+  media.addEventListener("error", () => wrapper.replaceWith(placeholder));
+  wrapper.append(media);
 
   return wrapper;
 }
