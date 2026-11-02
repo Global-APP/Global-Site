@@ -25,7 +25,8 @@ const PARTNERS = [
     description: "Conheça o primeiro servidor brasileiro de debates no Fluxer e QG do nosso movimento!",
     invite: "https://fluxer.gg/M1fsAYTA",
     icon: "assets/partners/arn.png",
-    accent: "#ffffff"
+    accent: "#ffffff",
+    button: "#000000"
   },
   {
     name: "Ace",
