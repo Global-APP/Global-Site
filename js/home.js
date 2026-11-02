@@ -305,18 +305,6 @@ function initScrollEffects() {
   $$(".page > section").forEach((section) => spy.observe(section));
 }
 
-function animateNumber(element, target, duration) {
-  const start = performance.now();
-
-  const tick = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    element.textContent = Math.round(target * (1 - (1 - progress) ** 3));
-    if (progress < 1) requestAnimationFrame(tick);
-  };
-
-  requestAnimationFrame(tick);
-}
-
 function initCounters() {
   const counters = $$("[data-count]");
 

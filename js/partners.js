@@ -1,5 +1,3 @@
-const DEFAULT_ACCENT = "#0330ef";
-
 const JOIN_CARD = {
   name: "Quer ser parceiro?",
   description: "Entre no servidor de suporte e fale com a gente para colocar a sua comunidade aqui.",
@@ -8,46 +6,8 @@ const JOIN_CARD = {
   label: "Falar com a gente"
 };
 
-const escapeHtml = (text) =>
-  text.replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
-
-const VIDEO_PATTERN = /\.(mp4|webm)$/i;
-
-function createMedia(source) {
-  if (!VIDEO_PATTERN.test(source)) {
-    const image = new Image();
-
-    image.alt = "";
-    image.src = source;
-    return image;
-  }
-
-  const video = document.createElement("video");
-
-  Object.assign(video, { src: source, autoplay: true, loop: true, muted: true, playsInline: true });
-  return video;
-}
-
-function createIcon({ name, icon, letter = name[0].toUpperCase(), accent = DEFAULT_ACCENT }) {
-  const placeholder = document.createElement("i");
-  placeholder.className = "initial partner__icon";
-  placeholder.style.setProperty("--tint", accent);
-  placeholder.textContent = letter;
-
-  if (!icon) return placeholder;
-
-  const wrapper = document.createElement("span");
-  const media = createMedia(icon);
-
-  wrapper.className = "avatar partner__icon";
-  media.addEventListener("error", () => wrapper.replaceWith(placeholder));
-  wrapper.append(media);
-
-  return wrapper;
-}
-
 function createCard(partner, index) {
-  const { name, description, invite, accent = DEFAULT_ACCENT, button, label = "Entrar no servidor" } = partner;
+  const { name, description, invite, icon, letter, accent = BRAND_COLOR, button, label = "Entrar no servidor" } = partner;
   const card = document.createElement("article");
 
   card.className = "partner";
@@ -62,7 +22,9 @@ function createCard(partner, index) {
       <a class="partner__join" href="${escapeHtml(invite)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>
     </div>`;
 
-  card.querySelector(".partner__body").prepend(createIcon(partner));
+  const avatar = createAvatar({ name, source: icon, letter, accent, className: "partner__icon" });
+  card.querySelector(".partner__body").prepend(avatar);
+
   return card;
 }
 
@@ -71,24 +33,6 @@ function renderPartners() {
   const cards = [...PARTNERS, JOIN_CARD].map(createCard);
 
   scene.append(...cards);
-}
-
-function initSceneTilt() {
-  const stage = $("#partners-stage");
-  const scene = $("#partners-scene");
-
-  stage.addEventListener("pointermove", (event) => {
-    if (event.pointerType !== "mouse") return;
-
-    const { left, top, width, height } = stage.getBoundingClientRect();
-    scene.style.setProperty("--tilt-x", (event.clientY - top) / height - 0.5);
-    scene.style.setProperty("--tilt-y", (event.clientX - left) / width - 0.5);
-  });
-
-  stage.addEventListener("pointerleave", () => {
-    scene.style.setProperty("--tilt-x", 0);
-    scene.style.setProperty("--tilt-y", 0);
-  });
 }
 
 function initCardTilt() {
@@ -118,5 +62,5 @@ function initCardTilt() {
 }
 
 renderPartners();
-initSceneTilt();
+initSceneTilt($("#partners-stage"), $("#partners-scene"));
 initCardTilt();

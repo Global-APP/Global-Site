@@ -87,6 +87,75 @@ function initReveal() {
   });
 }
 
+const BRAND_COLOR = "#0330ef";
+const VIDEO_PATTERN = /\.(mp4|webm)$/i;
+
+const escapeHtml = (text) =>
+  text.replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+
+function animateNumber(element, target, duration, from = 0) {
+  const start = performance.now();
+
+  const tick = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const value = from + (target - from) * (1 - (1 - progress) ** 3);
+
+    element.textContent = Math.round(value).toLocaleString("pt-BR");
+    if (progress < 1) requestAnimationFrame(tick);
+  };
+
+  requestAnimationFrame(tick);
+}
+
+function createMedia(source) {
+  if (!VIDEO_PATTERN.test(source)) {
+    const image = new Image();
+
+    image.alt = "";
+    image.src = source;
+    return image;
+  }
+
+  const video = document.createElement("video");
+
+  Object.assign(video, { src: source, autoplay: true, loop: true, muted: true, playsInline: true });
+  return video;
+}
+
+function createAvatar({ name, source, letter = name[0].toUpperCase(), accent = BRAND_COLOR, className = "" }) {
+  const placeholder = document.createElement("i");
+
+  placeholder.className = `initial ${className}`.trim();
+  placeholder.style.setProperty("--tint", accent);
+  placeholder.textContent = letter;
+
+  if (!source) return placeholder;
+
+  const wrapper = document.createElement("span");
+  const media = createMedia(source);
+
+  wrapper.className = `avatar ${className}`.trim();
+  media.addEventListener("error", () => wrapper.replaceWith(placeholder));
+  wrapper.append(media);
+
+  return wrapper;
+}
+
+function initSceneTilt(stage, scene) {
+  stage.addEventListener("pointermove", (event) => {
+    if (event.pointerType !== "mouse") return;
+
+    const { left, top, width, height } = stage.getBoundingClientRect();
+    scene.style.setProperty("--tilt-x", (event.clientY - top) / height - 0.5);
+    scene.style.setProperty("--tilt-y", (event.clientX - left) / width - 0.5);
+  });
+
+  stage.addEventListener("pointerleave", () => {
+    scene.style.setProperty("--tilt-x", 0);
+    scene.style.setProperty("--tilt-y", 0);
+  });
+}
+
 initLinks();
 initTheme();
 initMenu();
