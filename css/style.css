@@ -1579,6 +1579,7 @@ h2,
 }
 
 .sidebar__divider {
+  align-self: center;
   width: 22px;
   height: 2px;
   border: 0;
