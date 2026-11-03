@@ -18,7 +18,7 @@ const SERVERS = [
   "Pudim HQ",
   "Família BR",
   "tuxgameplay.fun alpha",
-  "Aurora Games",
+  "Cafofo do Kaw",
   "Café com Código",
   "Global: Converse globalmente"
 ];
@@ -30,7 +30,7 @@ const PEOPLE = {
   theo: { name: "theo", tag: "theo#0969", color: "#7c3aed" },
   bia: { name: "bia", tag: "bia#7712", color: "#d97706" },
   rafa: { name: "rafa", tag: "rafa#3310", color: "#059669" },
-  kai: { name: "kai", tag: "kai#0001", color: "#2563eb" },
+  kai: { name: "Kaw", tag: "kaw#6767", color: "#2563eb" },
   leo: { name: "léo", tag: "leo#8890", color: "#0891b2" },
   dani: { name: "dani", tag: "dani#5528", color: "#e0306b" },
   cadu: { name: "cadu", tag: "cadu#6074", color: "#7c3aed" }
@@ -49,7 +49,7 @@ const MESSAGES = {
   callReply: { kind: "relay", author: "bia", server: "Pudim HQ", text: "eu vou, me dá 5 min", replyTo: { type: "bot" } },
   lively: { kind: "local", author: "mari", text: "kkkk o chat tá animado hoje" },
   sticker: { kind: "relay", author: "rafa", server: "tuxgameplay.fun alpha", sticker: { emoji: "😎", from: GLOBAL_BLUE, to: "#0a1a6e" } },
-  welcome: { kind: "relay", author: "kai", accent: GLOBAL_BLUE, server: "Global: Converse globalmente", text: "bem-vindos ao Global 💙" },
+  welcome: { kind: "relay", author: "kai", accent: GLOBAL_BLUE, server: "Global: Converse globalmente", text: "67 aura + ego" },
   thanks: { kind: "relay", author: "leo", server: "Aurora Games", text: "valeu pela dica! já tô conectado aqui também", replyTo: { type: "member", author: "nico", text: ARRIVED_TEXT } },
   awake: { kind: "relay", author: "dani", server: "Queremos acordar tarde!", text: "acabei de acordar, que horas são?" },
   code: { kind: "relay", author: "cadu", server: "Café com Código", text: "bora codar? 💻", replyTo: { type: "bot" } }
