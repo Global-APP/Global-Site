@@ -19,7 +19,7 @@ O chat global do [Fluxer](https://fluxer.app). Conecte o seu servidor a dezenas 
 </div>
 
 > [!NOTE]
-> Este repositório é o **site** do Global. O código do bot fica em [Global-APP/global](https://github.com/Global-APP/global).
+> A imagem acima é fícticia, somente para representar o fluxo do chat. Este repositório é o **site** do Global. O código do bot fica em [Global-APP/global](https://github.com/Global-APP/global).
 
 <br>
 
